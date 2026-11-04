@@ -14,3 +14,16 @@ console.log('adder(100) :>> ', adder(100));
 const adder2 = createAdder(100);
 console.log('adder2(13) :>> ', adder2(13));
 console.log('adder2(100) :>> ', adder2(100));
+
+function createLogger(prefix) {
+    return function(message) {
+        return prefix + ':' + message ;
+    };
+}
+
+const authLogger = createLogger('AUTH');
+const apiLogger = createLogger('API');
+
+
+console.log('authLogger() :>> ', authLogger('User logged in'));
+console.log('apiLogger() :>> ', apiLogger('Request failed'));
